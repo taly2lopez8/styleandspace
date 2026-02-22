@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<header class="post-header">
+    <div class="container">
+        {% if page.category %}
+        <span class="post-category">{{ page.category }}</span>
+        {% endif %}
+        <h1 class="post-title">{{ page.title }}</h1>
+        <p class="post-meta">By Talita Lopez &middot; {{ page.date | date: "%B %d, %Y" }}</p>
+    </div>
+</header>
+
+<article class="post-body">
+    <a href="{{ site.baseurl }}/blog/" class="back-to-blog">&larr; Back to Blog</a>
+
+    {{ content }}
+
+    <a href="{{ site.baseurl }}/blog/" class="back-to-blog" style="margin-top: 3rem;">&larr; Back to all articles</a>
+</article>

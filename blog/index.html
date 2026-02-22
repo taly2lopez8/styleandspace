@@ -1,0 +1,38 @@
+---
+layout: default
+title: Blog
+---
+
+<header class="blog-listing-header">
+    <div class="container">
+        <span class="post-category">Style &amp; Space</span>
+        <h1>The Blog</h1>
+        <p>Honest conversations about style, motherhood, mental health, and building a life you love.</p>
+    </div>
+</header>
+
+<section class="blog-listing-body">
+    <div class="container">
+        {% if site.posts.size > 0 %}
+        <div class="blog-grid">
+            {% for post in site.posts %}
+            <a href="{{ post.url | prepend: site.baseurl }}" class="blog-card">
+                <div class="blog-card-cover"></div>
+                <div class="blog-card-body">
+                    {% if post.category %}
+                    <div class="blog-card-category">{{ post.category }}</div>
+                    {% endif %}
+                    <div class="blog-card-title">{{ post.title }}</div>
+                    <div class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</div>
+                    <div class="blog-card-meta">{{ post.date | date: "%B %d, %Y" }}</div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p style="text-align: center; color: var(--text-medium); padding: 4rem 0;">
+            Posts coming soon — stay tuned! ♡
+        </p>
+        {% endif %}
+    </div>
+</section>

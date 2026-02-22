@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.title %}{{ page.title }} | {% endif %}Style & Space Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/styles.css">
+</head>
+<body>
+    <nav>
+        <a href="{{ site.baseurl }}/" class="logo">Style <span>&</span> Space</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="{{ site.baseurl }}/#about">About</a></li>
+            <li><a href="{{ site.baseurl }}/#journey">My Journey</a></li>
+            <li><a href="{{ site.baseurl }}/#mission">Mission</a></li>
+            <li><a href="{{ site.baseurl }}/blog/">Blog</a></li>
+            <li><a href="{{ site.baseurl }}/#connect">Connect</a></li>
+        </ul>
+        <div class="mobile-menu" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    {{ content }}
+
+    <footer>
+        <div class="footer-logo">Style & Space</div>
+        <div class="footer-tagline">Space to Heal. Style to Shine. Courage to Rise.</div>
+        <p>&copy; 2026 Style & Space Media. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.card, .about-content, .mission-content, .blog-card').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

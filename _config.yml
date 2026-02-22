@@ -1,0 +1,15 @@
+title: Style & Space Media
+description: Space to Heal. Style to Shine. Courage to Rise.
+url: ""
+baseurl: "/styleandspace"
+
+# Blog post URLs: /blog/2026/02/22/post-title/
+permalink: /blog/:year/:month/:day/:title/
+
+# Default values for posts
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
