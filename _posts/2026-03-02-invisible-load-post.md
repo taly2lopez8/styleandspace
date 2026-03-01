@@ -3,6 +3,7 @@ layout: post
 title: "My First Day Back — And Why Style & Space Is Bigger Than “Influencing”"
 date: 2026-02-28
 categories: [Career, Motherhood]
+image: /assets/images/invisible-load-post.png
 ---
 
 Good morning.
