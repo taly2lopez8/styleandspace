@@ -9,7 +9,8 @@ layout: default
     <div class="container">
         {% if page.category %}
         <span class="post-category">{{ page.category }}</span>
-        {% elsif page.categories %}
+        {% endif %}
+        {% if page.categories.size > 0 %}
         {% for cat in page.categories %}
         <span class="post-category">{{ cat }}</span>
         {% endfor %}

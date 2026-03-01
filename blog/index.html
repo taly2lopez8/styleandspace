@@ -22,6 +22,11 @@ title: Blog
                     {% if post.category %}
                     <div class="blog-card-category">{{ post.category }}</div>
                     {% endif %}
+                    {% if post.categories.size > 0 %}
+                    {% for cat in post.categories %}
+                    <div class="blog-card-category">{{ cat }}</div>
+                    {% endfor %}
+                    {% endif %}
                     <div class="blog-card-title">{{ post.title }}</div>
                     <div class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</div>
                     <div class="blog-card-meta">{{ post.date | date: "%B %d, %Y" }}</div>
