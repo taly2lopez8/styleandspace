@@ -3,6 +3,9 @@ layout: default
 ---
 
 <header class="post-header">
+    {% if page.image %}
+    <img src="{{ page.image }}" alt="{{ page.title }}" class="post-cover-image">
+    {% endif %}
     <div class="container">
         {% if page.category %}
         <span class="post-category">{{ page.category }}</span>
