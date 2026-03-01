@@ -19,13 +19,8 @@ title: Blog
             <a href="{{ post.url | prepend: site.baseurl }}" class="blog-card">
                 <div class="blog-card-cover"></div>
                 <div class="blog-card-body">
-                    {% if post.category %}
-                    <div class="blog-card-category">{{ post.category }}</div>
-                    {% endif %}
                     {% if post.categories.size > 0 %}
-                    {% for cat in post.categories %}
-                    <div class="blog-card-category">{{ cat }}</div>
-                    {% endfor %}
+                    <div class="blog-card-category">{{ post.categories | join: " — " }}</div>
                     {% endif %}
                     <div class="blog-card-title">{{ post.title }}</div>
                     <div class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 25 }}</div>

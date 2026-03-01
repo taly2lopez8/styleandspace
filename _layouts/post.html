@@ -7,13 +7,8 @@ layout: default
     <img src="{{ page.image }}" alt="{{ page.title }}" class="post-cover-image">
     {% endif %}
     <div class="container">
-        {% if page.category %}
-        <span class="post-category">{{ page.category }}</span>
-        {% endif %}
         {% if page.categories.size > 0 %}
-        {% for cat in page.categories %}
-        <span class="post-category">{{ cat }}</span>
-        {% endfor %}
+        <span class="post-category">{{ page.categories | join: " — " }}</span>
         {% endif %}
         <h1 class="post-title">{{ page.title }}</h1>
         <p class="post-meta">By Talita Lopez &middot; {{ page.date | date: "%B %d, %Y" }}</p>
