@@ -3,6 +3,15 @@ description: Space to Heal. Style to Shine. Courage to Rise.
 url: ""
 baseurl: ""
 
+# jekyll-polyglot i18n settings
+languages: ["en", "pt"]
+default_lang: "en"
+exclude_from_localization: ["assets", "CNAME", "talita-portrait.jpg"]
+parallel_localization: false
+
+plugins:
+  - jekyll-polyglot
+
 # Blog post URLs: /blog/2026/02/22/post-title/
 permalink: /blog/:year/:month/:day/:title/
 
